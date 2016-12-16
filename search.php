@@ -14,8 +14,9 @@
 	</head>
 	<body>
 	<?php
-		$genre = isset($_POST["genre"]) ? $_POST["genre"] : ""; // create variable for genre 
-
+		// Get genre
+		$genre = isset($_POST["genre"]) ? $_POST["genre"] : "All";
+		
 		// Build query
 		if ($genre == "All") {
 			$query = "SELECT * FROM movies ORDER BY Year DESC, Awards ASC;";
@@ -24,30 +25,34 @@
 		else {
 			$query = "SELECT * FROM movies WHERE Genre LIKE '%$genre%' ORDER BY Year DESC, Awards ASC;";
 		}	
-		
-		// Connect to MySQL
-		if ( !( $database = mysql_connect( "localhost", "testuser", "99AnY4mhCxcg" )))
-			die( "Could not connect to rental database. </body></html>" );
-		
-		// Open rental database
-		if ( !mysql_select_db( "rentaldb", $database ) )
-			die( "Could not open rental database. </body></html>" );
-			
+
+		$servername = "localhost";
+		$username = "id347143_admin";
+		$password = "v3BGu7rZXjGh7GAh";
+		$database = "id347143_rentaldb";
+
+		// Create connection
+		$connection = mysqli_connect($servername, $username, $password, $database);
+
+		// Check connection
+		if (!$connection) {
+		    die("Connection to rental database failed: " . mysqli_connect_error());
+		}		
 		// Query rental database
-     	if ( !( $result = mysql_query( $query, $database ) ) )
-     	{
-     		print( "<p>Could not execute query!</p>" );
-     		die( mysql_error() . "</body></html>" );
-      	} // end if
+		if ( !( $result = mysqli_query( $connection, $query ) ) )
+		{
+			print( "<p>Could not execute query on rental database.</p>" );
+			die( mysqli_error() . "</body></html>" );
+		}
       	
-      	mysql_close($database);
+      	 	mysqli_close($database);
 	?>	<!-- end PHP script -->
 	<div class="results">
 		<table>
 			<caption><?php print("<h2>$genre </h2>")?></caption>
 			<?php
 				// Fetch each record in result set
-				while ($row = mysql_fetch_assoc($result))
+				while ($row = mysqli_fetch_assoc($result))
 				{
 					// These are all of the columns within each record. They are (currently) not all used.
 					$id = $row["ID"];
@@ -83,7 +88,7 @@
 			?><!-- end PHP script -->
 		</table>
 	</div>
-	<p>Your search yielded <?php print( mysql_num_rows ($result) )?> result(s).</p>
+	<p>Your search yielded <?php print( mysqli_num_rows ($result) )?> result(s).</p>
 	
 	</body>
 </html>
