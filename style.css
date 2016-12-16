@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box; /* Not supported in IE7 and earlier. */
+}
+
+body {
+  font-family: sans-serif;
+  background-color: lightyellow;
+  
+}
+
+footer {
+	text-align: center;
+	color: White;
+	border-style: ridge;
+ 	border-width: 5px;
+ 	border-color: FireBrick;
+  border-collapse: collapse;
+  background-color: #800000;
+}
+
+table {
+  background-color: lightblue;
+  border-collapse: collapse;
+  border: 1px solid gray;
+}
+
+td {
+  padding: 5px;
+  font-size: 1.5em;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+.border {
+  border-style: ridge;
+ 	border-width: 5px;
+ 	border-color: FireBrick;
+ 	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
+
+.column {
+    float: left;
+    padding: 30px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.menu {
+    width: 25%;
+}
+
+.content {
+    width: 75%;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 8px;
+    color: Black;
+}
+
+.menu li:hover {
+    background-color: #fff0b3;
+}
+
+.results {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  
+}
