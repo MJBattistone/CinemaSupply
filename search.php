@@ -4,13 +4,6 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title>Search Results</title>
-		<style type = "text/css">
-			body {font-family: sans-serif; background-color: lightyellow;}
-			table {background-color: lightblue; border-collapse: collapse; border: 1px solid gray;}
-			td {padding: 5px; font-size: 1.5em;}
-		 	tr:nth-child(odd){background-color: white;}
-		 	.results {max-width: 1200px; width: 100%; margin: 0 auto; position: relative;}
-		</style>
 	</head>
 	<body>
 	<?php
