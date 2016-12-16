@@ -1,6 +1,6 @@
 # CinemaSupply
 
-Unless someone has an idea for hosting the database, my plan is to set up an AWS account tomorrow using a free trial. The assignment .pdf says we need to provide a link to a published page (instead of just running it locally and submitting source code).
+http://cinemasupply.webutu.com/
 
 The 'rentaldb.sql' is a SQL dump for a database containing two tables: 
 
@@ -14,4 +14,4 @@ I am almost finished with a more user-friendly insert page which we can use in t
 
 The current search page was developed so I had something to show the group. I ended up starting the code from scratch and most of the time thus far has been spent designing/populating the database and developing the admin-insert page. It seems like  we don't have much right now but most of our project's content is *there,* we just have to decide on how/what we want to display and query the database accordingly.
 
-I will finish the README tomorrow. Let me know if you have any questions.
+Let me know if you have any questions.
